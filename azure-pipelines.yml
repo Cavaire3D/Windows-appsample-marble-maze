@@ -10,9 +10,6 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: 'C++/MarbleMaze_VS2017.sln'
-  buildPlatform: 'x86|x64|ARM'
-  buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
 steps:
@@ -22,10 +19,10 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- 
 - task: VSBuild@1
   inputs:
-    platform: 'x86'
-    solution: '$(solution)'
-    vsVersion: '14.0'
-    configuration: '$(buildConfiguration)'
-    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+    solution: 'C++/MarbleMaze_VS2017.sln'
+    vsVersion: '15.0'
+    platform: 'Win32'
+    configuration: 'Release'
