@@ -19,7 +19,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- 
 - task: VSBuild@1
   inputs:
     solution: 'C++/MarbleMaze_VS2017.sln'
