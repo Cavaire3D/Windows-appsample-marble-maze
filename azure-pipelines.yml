@@ -23,5 +23,7 @@ steps:
   inputs:
     solution: 'C++/MarbleMaze_VS2017.sln'
     vsVersion: '15.0'
+    msbuildArgs: '/p:VisualStudioVersion=15.0'
     platform: 'Win32'
     configuration: 'Release'
+    customVersion: '16'
